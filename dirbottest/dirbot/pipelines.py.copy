@@ -14,3 +14,19 @@ class FilterWordsPipeline(object):
                 raise DropItem("Contains forbidden word: %s" % word)
         else:
             return item
+
+class BlankPipeline(object):
+
+    def process_item(self, item, spider):
+	if item['url']:
+            return item
+        else:
+            raise DropItem("Missing price in %s" % item)
+class GetFirstDict(object):
+
+    def process_item(self, item, spider):
+	if items.pop(1)
+	    return item
+	else:
+	    raise DropItem("Not first")
+	

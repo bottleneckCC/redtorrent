@@ -30,5 +30,4 @@ class DmozSpider(Spider):
             item['description'] = site.select('text()').re('-\s([^\n]*?)\\n')
             items.append(item)
 
-	it = items.pop(1)
-        return it
+        return items

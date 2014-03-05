@@ -18,7 +18,8 @@ class FilterWordsPipeline(object):
 class BlankPipeline(object):
 
     def process_item(self, item, spider):
-        if item['url']:
+	if item['url']:
             return item
         else:
             raise DropItem("Missing price in %s" % item)
+
