@@ -1,14 +1,5 @@
 #!/bin/bash
-INPUT=items21.csv
-OLDIFS=$IFS
-IFS=,
-[ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
-while read flname dob ssn tel status
+while IFS=, read col1 col2
 do
-	echo "Name : $flname"
-	echo "DOB : $dob"
-	echo "SSN : $ssn"
-	echo "Telephone : $tel"
-	echo "Status : $status"
-done < $INPUT
-IFS=$OLDIFS
+    echo "I got:$col1"
+done < items22.csv

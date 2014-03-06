@@ -25,10 +25,11 @@ class DmozSpider(Spider):
 
         for site in sites:
             item = Website()
-            item['name'] = site.select('a/text()').extract()
             item['url'] = site.select('a/@href').extract()
-            item['description'] = site.select('text()').re('-\s([^\n]*?)\\n')
             items.append(item)
 
-	it = items.pop(1)
-        return it
+	#return items
+	item2 = Website(items.pop(1))
+	print item2['url']
+
+	
