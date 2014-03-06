@@ -30,6 +30,6 @@ class DmozSpider(Spider):
 
 	#return items
 	item2 = Website(items.pop(1))
-	print item2['url']
-
+	item3 = item2['url']
+	print item3[0]
 	
